@@ -18,7 +18,7 @@
         <maven.surefire.plugin.version>2.22.1</maven.surefire.plugin.version>
         <maven.failsafe.plugin.version>2.22.1</maven.failsafe.plugin.version>
         <maven.jar.plugin.version>3.1.1</maven.jar.plugin.version>
-        <mockito.verson>2.23.4</mockito.verson>
+        <mockito.version>2.23.4</mockito.version>
         <jacoco.maven.version>0.7.9</jacoco.maven.version>
         <java.version>11</java.version>
         <junit.jupiter.version>5.4.0</junit.jupiter.version>
