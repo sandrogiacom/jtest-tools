@@ -6,11 +6,11 @@
         <groupId>org.jtesttools</groupId>
         <artifactId>jtesttools-parent</artifactId>
         <version>0.0.1-SNAPSHOT</version>
+        <relativePath>../jtesttools-parent/</relativePath>
     </parent>
 
     <groupId>org.jtesttools</groupId>
     <artifactId>jtesttools-unittest</artifactId>
-    <packaging>pom</packaging>
 
     <name>jTest Tools Unit Test</name>
     <url>https://github.com/sandrogiacom/jtest-tools</url>
@@ -26,24 +26,25 @@
             <groupId>org.junit.jupiter</groupId>
             <artifactId>junit-jupiter-api</artifactId>
             <version>${junit.jupiter.version}</version>
-            <scope>test</scope>
+            <scope>compile</scope>
         </dependency>
         <dependency>
             <groupId>org.junit.jupiter</groupId>
             <artifactId>junit-jupiter-params</artifactId>
             <version>${junit.jupiter.version}</version>
-            <scope>test</scope>
+            <scope>compile</scope>
         </dependency>
         <dependency>
             <groupId>org.assertj</groupId>
             <artifactId>assertj-core</artifactId>
             <version>${assertj.version}</version>
-            <scope>test</scope>
+            <scope>compile</scope>
         </dependency>
         <dependency>
             <groupId>org.mockito</groupId>
             <artifactId>mockito-core</artifactId>
             <version>${mockito.version}</version>
+            <scope>compile</scope>
         </dependency>
     </dependencies>
 
