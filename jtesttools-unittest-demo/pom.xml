@@ -6,7 +6,7 @@
     <artifactId>jtesttools-unittest-demo</artifactId>
     <version>0.0.1-SNAPSHOT</version>
 
-    <name>jTest Tools Unit Test</name>
+    <name>jTest Tools Unit Test Demo</name>
     <url>https://github.com/sandrogiacom/jtest-tools</url>
 
     <properties>
