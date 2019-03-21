@@ -39,23 +39,11 @@
                 <plugin>
                     <artifactId>maven-surefire-plugin</artifactId>
                     <version>${maven.surefire.plugin.version}</version>
-                    <configuration>
-                        <argLine>
-                            <!-- ${argLine} - necessário para funcionar o jacoco corretamente-->
-                            ${argLine} --illegal-access=permit
-                        </argLine>
-                    </configuration>
                 </plugin>
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-failsafe-plugin</artifactId>
                     <version>${maven.failsafe.plugin.version}</version>
-                    <configuration>
-                        <argLine>
-                            <!-- ${argLine} - necessário para funcionar o jacoco corretamente-->
-                            ${argLine} --illegal-access=permit
-                        </argLine>
-                    </configuration>
                     <executions>
                         <execution>
                             <goals>

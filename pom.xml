@@ -15,6 +15,7 @@
     <modules>
         <module>jtesttools-parent</module>
         <module>jtesttools-unittest</module>
+        <module>jtesttools-integration-test</module>
         <module>jtesttools-unittest-demo</module>
     </modules>
 
