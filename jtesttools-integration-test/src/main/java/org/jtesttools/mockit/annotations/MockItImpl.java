@@ -1,15 +1,15 @@
 package org.jtesttools.mockit.annotations;
 
-import static java.lang.annotation.ElementType.FIELD;
+import static java.lang.annotation.ElementType.TYPE;
 import static java.lang.annotation.RetentionPolicy.RUNTIME;
 
 import java.lang.annotation.Retention;
 import java.lang.annotation.Target;
 
 /**
- * MockIt is an annotation like @Spy of Mockito project
+ * MockItImpl is an annotation that mark class as a MockClient implementation of @{@link MockIt}
  */
-@Target(FIELD)
+@Target(TYPE)
 @Retention(RUNTIME)
-public @interface MockIt {
+public @interface MockItImpl {
 }
