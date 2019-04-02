@@ -10,11 +10,6 @@ import org.mockserver.model.HttpRequest;
 public class TranslatetClientMock extends MockWebIt implements Translate {
 
     @Override
-    public String translate(String message) {
-        return null;
-    }
-
-    @Override
     public String getLanguages() {
         request = HttpRequest.request("/language/translate/v2/languages");
         return null;
