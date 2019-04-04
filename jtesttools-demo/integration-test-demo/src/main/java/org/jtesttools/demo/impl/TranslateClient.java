@@ -1,6 +1,10 @@
 package org.jtesttools.demo.impl;
 
 
+import org.jtesttools.demo.Translate;
+import org.jtesttools.demo.config.GoogleConfig;
+import org.springframework.beans.factory.annotation.Autowired;
+
 import java.io.IOException;
 import java.net.URI;
 import java.net.http.HttpClient;
@@ -8,19 +12,10 @@ import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
 import java.net.http.HttpResponse.BodyHandlers;
 
-import org.jtesttools.demo.Translate;
-import org.jtesttools.demo.config.GoogleConfig;
-import org.springframework.beans.factory.annotation.Autowired;
-
 public class TranslateClient implements Translate {
 
     @Autowired
     private GoogleConfig config;
-
-    @Override
-    public String translate(String message) {
-        return null;
-    }
 
     @Override
     public String getLanguages() {

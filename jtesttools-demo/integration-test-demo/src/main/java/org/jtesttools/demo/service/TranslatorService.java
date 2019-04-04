@@ -19,8 +19,4 @@ public class TranslatorService {
         return JsonConverter.of().toObject(json, Languages.class);
     }
 
-    public String translate(String message) {
-        return translate.translate(message);
-    }
-
 }
