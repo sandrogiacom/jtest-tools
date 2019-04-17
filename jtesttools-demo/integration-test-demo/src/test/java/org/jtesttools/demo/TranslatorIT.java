@@ -44,7 +44,7 @@ class TranslatorIT {
     @Test
     public void whenSayHelloThenShowMockMessage() {
         Languages langs = new Languages();
-        langs.setLanguages(Arrays.asList(
+        langs.setLanguage(Arrays.asList(
                 LanguageBuilder.of()
                         .language("af").build(),
                 LanguageBuilder.of()

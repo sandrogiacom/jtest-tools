@@ -1,6 +1,7 @@
 package org.jtesttools.demo.service;
 
 import org.jtesttools.demo.Translate;
+import org.jtesttools.demo.model.Data;
 import org.jtesttools.demo.model.Languages;
 import org.jtesttools.mockit.JsonConverter;
 import org.springframework.stereotype.Service;
@@ -16,7 +17,8 @@ public class TranslatorService {
 
     public Languages getLanguages() {
         String json = translate.getLanguages();
-        return JsonConverter.of().toObject(json, Languages.class);
+        Data data = JsonConverter.of().toObject(json, Data.class);
+        return null;
     }
 
 }

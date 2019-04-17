@@ -1,15 +1,21 @@
 package org.jtesttools.demo;
 
-import static org.assertj.core.api.Assertions.assertThat;
-
 import org.junit.jupiter.api.Test;
+
+import static org.assertj.core.api.Assertions.assertThat;
 
 class CalcDemoTest {
 
     @Test
-    void mult() {
+    void whenMultiplyingThenCheckResult() {
+        //Given
         CalcDemo calc = new CalcDemo();
-        assertThat(calc.mult(4, 5)).isEqualTo(20);
+
+        //When
+        double result = calc.multiply(4, 5);
+
+        //Then
+        assertThat(result).isEqualTo(20);
     }
 
     @Test

@@ -1,12 +1,12 @@
 package org.jtesttools.demo;
 
-import static org.assertj.core.api.Assertions.assertThat;
-import static org.mockito.Mockito.when;
 
+import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
+import org.mockito.Mockito;
 import org.mockito.MockitoAnnotations;
 
 class SendEmailTest {
@@ -17,18 +17,19 @@ class SendEmailTest {
     @InjectMocks
     EmailService service;
 
-    @BeforeEach
-    void initMocks() {
-        MockitoAnnotations.initMocks(this);
-    }
-
     @Test
-    void sendMail() {
-        when(sendEmail.send("Teste")).thenReturn(true);
+    void whenSendMailThenReturnTrue() {
+        Mockito.when(sendEmail.send("Teste")).thenReturn(true);
 
         boolean sent = service.sendEmail("Teste");
 
-        assertThat(sent).isTrue();
+        Assertions.assertThat(sent).isTrue();
+    }
+
+
+    @BeforeEach
+    void initMocks() {
+        MockitoAnnotations.initMocks(this);
     }
 
 }

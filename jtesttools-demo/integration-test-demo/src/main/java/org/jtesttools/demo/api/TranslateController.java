@@ -16,7 +16,8 @@ public class TranslateController {
 
     @GetMapping({"/languages"})
     public Languages getLanguages() {
-        return service.getLanguages();
+        Languages languages = service.getLanguages();
+        return languages;
     }
 
 }
