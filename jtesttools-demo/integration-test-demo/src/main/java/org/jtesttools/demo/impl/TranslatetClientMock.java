@@ -15,4 +15,9 @@ public class TranslatetClientMock extends MockWebIt implements Translate {
         return null;
     }
 
+    @Override
+    public void updateSomething() {
+        System.out.println("TranslatetClientMock > updateSomething");
+    }
+
 }

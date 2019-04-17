@@ -4,4 +4,6 @@ public interface Translate {
 
     String getLanguages();
 
+    void updateSomething();
+
 }

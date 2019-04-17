@@ -62,4 +62,12 @@ class TranslatorIT {
                 .body("languages[1].language", equalTo("pt"));
     }
 
+    @Test
+    public void whenUpdateSomething() {
+
+        MockWebIt.mock(translate).updateSomething();
+
+
+    }
+
 }

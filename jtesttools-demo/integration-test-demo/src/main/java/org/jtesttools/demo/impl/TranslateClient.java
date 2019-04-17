@@ -35,4 +35,9 @@ public class TranslateClient implements Translate {
         return response.body();
     }
 
+    @Override
+    public void updateSomething() {
+        System.out.println("TranslateClient > updateSomething");
+    }
+
 }
