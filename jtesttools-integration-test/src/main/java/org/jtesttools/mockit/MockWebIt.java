@@ -18,7 +18,6 @@ public class MockWebIt {
         return mock;
     }
 
-
     public void thenReturn(Object response) {
         thenReturn(response, HTTP_STATUS_OK);
     }
