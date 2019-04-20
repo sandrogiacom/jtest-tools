@@ -15,8 +15,10 @@ public class TranslateController {
     }
 
     @GetMapping({"/languages"})
-    public Languages getLanguages() {
-        return service.getLanguages();
+    public Languages getLanguages() throws Exception {
+        Languages languages = service.getLanguages();
+        return languages;
     }
 
 }
+

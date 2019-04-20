@@ -14,6 +14,10 @@ public class MockWebIt {
         return instance;
     }
 
+    public static <T> T mock(T mock) {
+        return mock;
+    }
+
     public void thenReturn(Object response) {
         thenReturn(response, HTTP_STATUS_OK);
     }

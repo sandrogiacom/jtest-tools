@@ -1,12 +1,13 @@
 package org.jtesttools.demo;
 
 import static io.restassured.RestAssured.given;
-import static org.hamcrest.Matchers.equalTo;
+import static org.hamcrest.Matchers.hasItems;
 import static org.hamcrest.Matchers.hasSize;
 import static org.springframework.boot.test.context.SpringBootTest.WebEnvironment.RANDOM_PORT;
 
 import java.util.Arrays;
 
+import org.jtesttools.demo.model.GoogleLanguages;
 import org.jtesttools.demo.model.Language.LanguageBuilder;
 import org.jtesttools.demo.model.Languages;
 import org.jtesttools.mockit.MockItTestConfiguration;
@@ -29,6 +30,45 @@ import io.restassured.RestAssured;
 @RunWith(SpringRunner.class)
 class TranslatorIT {
 
+    @Test
+    public void whenGetLanguagesThenShowMockLanguages() throws Exception {
+        GoogleLanguages langs = buildMockLanguages();
+
+        MockWebIt.when(translate.getLanguages()).thenReturn(langs);
+
+        given()
+                .when()
+                .get("/languages")
+                .then()
+                .statusCode(HttpStatus.OK.value())
+                .body("languages", hasSize(3))
+                .body("languages.language", hasItems("en", "pt", "es"));
+    }
+
+    private GoogleLanguages buildMockLanguages() {
+        Languages langs = new Languages();
+        langs.setLanguages(Arrays.asList(
+                LanguageBuilder.of()
+                        .language("en").build(),
+                LanguageBuilder.of()
+                        .language("pt").build(),
+                LanguageBuilder.of()
+                        .language("es").build()));
+        GoogleLanguages lang = new GoogleLanguages();
+        lang.setData(langs);
+
+        return lang;
+    }
+
+    @Test
+    public void whenUpdateSomething() {
+
+        MockWebIt.mock(translate).updateSomething();
+
+
+    }
+
+
     @LocalServerPort
     int randomPort;
 
@@ -39,27 +79,6 @@ class TranslatorIT {
     public void initMock() {
         MockItAnnotations.initMocks(this);
         RestAssured.port = randomPort;
-    }
-
-    @Test
-    public void whenSayHelloThenShowMockMessage() {
-        Languages langs = new Languages();
-        langs.setLanguages(Arrays.asList(
-                LanguageBuilder.of()
-                        .language("af").build(),
-                LanguageBuilder.of()
-                        .language("pt").build()));
-
-        MockWebIt.when(translate.getLanguages()).thenReturn(langs);
-
-        given()
-                .when()
-                .get("/languages")
-                .then()
-                .statusCode(HttpStatus.OK.value())
-                .body("languages", hasSize(2))
-                .body("languages[0].language", equalTo("af"))
-                .body("languages[1].language", equalTo("pt"));
     }
 
 }

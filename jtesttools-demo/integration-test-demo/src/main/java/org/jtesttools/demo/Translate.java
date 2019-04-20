@@ -2,6 +2,8 @@ package org.jtesttools.demo;
 
 public interface Translate {
 
-    String getLanguages();
+    String getLanguages() throws Exception;
+
+    void updateSomething();
 
 }
