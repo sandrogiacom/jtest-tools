@@ -30,6 +30,11 @@ import io.restassured.RestAssured;
 @RunWith(SpringRunner.class)
 class TranslatorIT {
 
+    @LocalServerPort
+    int randomPort;
+    @MockIt
+    private Translate translate;
+
     @Test
     public void whenGetLanguagesThenShowMockLanguages() throws Exception {
         GoogleLanguages langs = buildMockLanguages();
@@ -67,13 +72,6 @@ class TranslatorIT {
 
 
     }
-
-
-    @LocalServerPort
-    int randomPort;
-
-    @MockIt
-    private Translate translate;
 
     @BeforeEach
     public void initMock() {
