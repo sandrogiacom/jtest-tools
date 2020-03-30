@@ -33,6 +33,30 @@ public class TranslateClient implements Translate {
     }
 
     @Override
+    public String translate(String phrase) throws Exception {
+        HttpClient client = HttpClient.newHttpClient();
+        // json formatted data
+        String json = new StringBuilder()
+                .append("{")
+                .append("\"q\":\"" +  phrase + "\",")
+                .append("\"target\":\"pt\"")
+                .append("}").toString();
+
+        HttpRequest request = HttpRequest.newBuilder()
+                .POST(HttpRequest.BodyPublishers.ofString(json))
+                .uri(URI.create("https://translation.googleapis.com" + "/language/translate/v2?key=AIzaSyCptMknvTR-Eosry2Hfv_PXQgZYygtQKSM"))
+                .build();
+        HttpResponse<String> response = null;
+        try {
+            response = client.send(request, BodyHandlers.ofString());
+        } catch (Exception e) {
+            throw e;
+        }
+
+        return response.body();
+    }
+
+    @Override
     public void updateSomething() {
         System.out.println("TranslateClient > updateSomething");
     }

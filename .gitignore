@@ -23,3 +23,8 @@
 
 # virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
 hs_err_pid*
+/jtesttools-demo/integration-test-demo/target/
+/jtesttools-demo/target/failsafe-reports/
+/jtesttools-integration-test/target/
+/jtesttools-unittest/target/maven-archiver/
+/jtesttools-demo/unittest-demo/target/
