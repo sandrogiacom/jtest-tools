@@ -44,7 +44,7 @@ public class TranslateClient implements Translate {
 
         HttpRequest request = HttpRequest.newBuilder()
                 .POST(HttpRequest.BodyPublishers.ofString(json))
-                .uri(URI.create("https://translation.googleapis.com" + "/language/translate/v2?key=AIzaSyCptMknvTR-Eosry2Hfv_PXQgZYygtQKSM"))
+                .uri(URI.create("https://translation.googleapis.com" + "/language/translate/v2?key="+ System.getenv("API_KEY")))
                 .build();
         HttpResponse<String> response = null;
         try {
